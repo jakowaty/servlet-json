@@ -21,10 +21,10 @@ public class JakowatyFrontController extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	String contextPath = req.getContextPath();
+    	String pathInfo = req.getPathInfo();
     	String requestMethod = req.getMethod();
     	
-    	resp.getWriter().write(contextPath);
+    	resp.getWriter().write(pathInfo);
     	resp.getWriter().write(requestMethod);
     }
 }
