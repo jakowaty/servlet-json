@@ -1,0 +1,8 @@
+{
+	"version":"0.0.1",
+	"routes":{
+		"GET@/":{"name":"welcome","controller":"HomepageController","action":"homepageAction"},
+		"GET@/test":{"name":"test","controller":"HomepageController","action":"testAction"},
+		"GET@/test-parameter/:parameter":{"name":"test-parameter","controller":"HomepageController","action":"testparamAction","varpass":["parameter"]}
+	}
+}
