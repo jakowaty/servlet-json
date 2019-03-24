@@ -5,7 +5,7 @@
   <artifactId>ROOT</artifactId>
   <packaging>war</packaging>
   <version>0.0.1</version>
-  <name>Servlet Maven Webapp</name>
+  <name>Jakowaty Front Controller - learn project</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -26,6 +26,18 @@
     	<version>2.0</version>
     	<scope>provided</scope>
     </dependency>
+    <dependency>
+    	<groupId>javax.json</groupId>
+    	<artifactId>javax.json-api</artifactId>
+    	<version>1.0</version>
+    	<scope>compile</scope>
+	</dependency>
+	<dependency>
+    	<groupId>org.glassfish</groupId>
+    	<artifactId>javax.json</artifactId>
+    	<version>1.1</version>
+    	<scope>compile</scope>
+	</dependency>
   </dependencies>
   <build>
     <finalName>ROOT</finalName>
@@ -55,6 +67,13 @@
         <plugin>
           <artifactId>maven-war-plugin</artifactId>
           <version>3.2.2</version>
+          <configuration>
+          	<webResources>
+          		<resource>
+          			<directory>src/main/resources</directory>
+          		</resource>
+          	</webResources>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
