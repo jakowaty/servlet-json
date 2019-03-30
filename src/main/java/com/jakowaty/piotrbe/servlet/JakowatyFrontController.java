@@ -15,6 +15,7 @@ import com.jakowaty.piotrbe.router.JakowatyRouter;
 public class JakowatyFrontController extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
+	/** @todo some kind of external config */
 	private static final String applicationRoutesFile = "routes.json";
     private JakowatyRouter router;
     
@@ -44,7 +45,7 @@ public class JakowatyFrontController extends HttpServlet
 
 		//here we know router has map analyzer initiated
 		//and attempted to load stream - otherwise E would be thrown
-		resp.getWriter().append(this.router.routeMapAnalyzer.asString);
+//		resp.getWriter().append(this.router.routeMapAnalyzer.asString);
 		
 		resp.getWriter().append(this.router.routeMapAnalyzer.asString);
     	if (this.router.find(requestMethod, pathInfo, resp.getWriter())) {
