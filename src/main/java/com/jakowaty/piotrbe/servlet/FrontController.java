@@ -9,32 +9,32 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.jakowaty.piotrbe.router.JakowatyRouter;
+import com.jakowaty.piotrbe.router.Router;
 
 
-public class JakowatyFrontController extends HttpServlet
+public class FrontController extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	/** @todo some kind of external config */
 	private static final String applicationRoutesFile = "routes.json";
-    private JakowatyRouter router;
+    private Router router;
     
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JakowatyFrontController() throws Exception
+    public FrontController() throws Exception
     {
         super();
         
         InputStream routeMapStream = this.getClass()
         		.getClassLoader()
-        		.getResourceAsStream(JakowatyFrontController.applicationRoutesFile);
+        		.getResourceAsStream(FrontController.applicationRoutesFile);
         
         if (routeMapStream == null) {
         	throw new FileNotFoundException("Routing map resource not found.");
         }
 
-        this.router = new JakowatyRouter(routeMapStream, JakowatyFrontController.applicationRoutesFile);
+        this.router = new Router(routeMapStream, FrontController.applicationRoutesFile);
     }
 
     @Override

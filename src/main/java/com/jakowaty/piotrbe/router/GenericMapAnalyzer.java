@@ -2,10 +2,7 @@ package com.jakowaty.piotrbe.router;
 
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
-import java.util.Collections;
 import java.util.List;
-
-import javax.json.stream.JsonParser;
 
 abstract public class GenericMapAnalyzer
 {

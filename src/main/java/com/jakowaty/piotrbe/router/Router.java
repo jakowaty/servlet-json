@@ -8,11 +8,11 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
-public class JakowatyRouter
+public class Router
 {
 	public GenericMapAnalyzer routeMapAnalyzer;
 	
-	public JakowatyRouter(InputStream routeMapFile, String mapResource) throws Exception
+	public Router(InputStream routeMapFile, String mapResource) throws Exception
 	{		
 		this.routeMapAnalyzer = GenericMapAnalyzer.getAnalyzerByFileType(mapResource);
 		
@@ -25,16 +25,16 @@ public class JakowatyRouter
 
 	public boolean find(String method, String path, PrintWriter response)
 	{
-		try {
-			List<?> list = this.routeMapAnalyzer.getKeys();
-			Iterator<?> i = list.iterator();
-			while (i.hasNext()) {
-				response.append((String)i.next());
-			
-			}
-		} catch (Exception e) {
-			response.append("EXCEPTION: " + e.getMessage());
-		}
+//		try {
+//			List<?> list = this.routeMapAnalyzer.getKeys();
+//			Iterator<?> i = list.iterator();
+//			while (i.hasNext()) {
+//				response.append((String)i.next());
+//			
+//			}
+//		} catch (Exception e) {
+//			response.append("EXCEPTION: " + e.getMessage());
+//		}
 		
 		return false;
 	}
