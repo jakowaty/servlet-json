@@ -4,3 +4,4 @@ webapps/*
 ./webapps/*
 .project
 .classpath
+.settings
