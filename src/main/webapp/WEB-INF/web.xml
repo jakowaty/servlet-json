@@ -8,7 +8,7 @@
   	<servlet-name>JakowatyFrontController</servlet-name>
   	<display-name>JakowatyFrontController</display-name>
   	<description></description>
-  	<servlet-class>com.jakowaty.piotrbe.servlet.JakowatyFrontController</servlet-class>
+  	<servlet-class>com.jakowaty.piotrbe.servlet.FrontController</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>JakowatyFrontController</servlet-name>
