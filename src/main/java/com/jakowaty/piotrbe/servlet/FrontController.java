@@ -28,12 +28,14 @@ public class FrontController extends HttpServlet
     {
     	try {
     		SimpleRouter simpleRouter = new SimpleRouter();
-    		
+    		resp.getWriter().append(req.getContextPath());
     		simpleRouter.get(
-    			"/test-param/{:param}",
+    			"/test-param/{:parametr}",
     			(request, response, router, route) -> {
     				try {
-    					response.getWriter().append("aaa");
+    					for (String k : route.getParams().keySet()) {
+    						resp.getWriter().println(k + "==>" + route.getParams().get(k));
+    					}
     				} catch (Exception e) {
 						return false;
 					}
